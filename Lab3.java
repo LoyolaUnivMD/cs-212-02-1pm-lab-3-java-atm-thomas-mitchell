@@ -16,6 +16,8 @@ import java.util.SortedMap;
 class Lab3 {
     public static void main(String[] args) {
 
+        DecimalFormat moneyFMT = new DecimalFormat("$,###.##");
+
        // Initialize variables
         double balance = 212.90;
 
@@ -36,8 +38,12 @@ class Lab3 {
            } else if (choice.equals("withdraw")) {
                System.out.print("How much money do you want to withdraw? ");
                int withdraw = input.nextInt();
-               while 
+               while
 
+           }else if (choice.equals("check balance")){
+               System.out.println("Current Balance: "+ balance);
+           }else if (choice.equals("leave")) {
+                break;
            } else if (choice.equals("check balance")){
 
            } else if (choice.equals("leave")) {
@@ -50,6 +56,14 @@ class Lab3 {
            System.out.println("What would you like to do: \nDeposit\nWithdraw\nCheck balance\nLeave");
            choice = input.nextLine().strip().toLowerCase();
 
+        }
+        System.out.println("Do you want your receipt printed or emailed? (print or email)");
+        String receipt = input.nextLine().strip().toLowerCase();
+        System.out.println("Thank you for using the ATM");
+        if (receipt.equals("print")){
+            System.out.println("Do not forget to take your recipt.");
+        }else if (receipt.equals("email")){
+            System.out.println("Check your email for your recipt");
         }
 
     }
