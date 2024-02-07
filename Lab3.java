@@ -9,10 +9,18 @@
 //            Reminder: you should never take code from the Internet or another person
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 class Lab3 {
     public static void main(String[] args) {
        System.out.println("Welcome to Lab 3");
+
+       // Initialize variables
+        double balance = 212.90;
+
+       Scanner input = new Scanner(System.in);
+       System.out.print("What is your name");
+       String name = input.next();
 
 
     }
