@@ -1,4 +1,4 @@
-// Programmers:  [your names here]
+// Programmers:  Michel & Thomas
 // Course:  CS 212
 // Due Date:
 // Lab Assignment:
@@ -19,27 +19,28 @@ class Lab3 {
        // Initialize variables
         double balance = 212.90;
 
-       Scanner input = new Scanner(System.in);
-       System.out.print("What is your name");
-       String name = input.next();
-       System.out.println("Welcome " + name);
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is your name");
+        String name = input.next();
+        System.out.println("Welcome " + name);
 
-        System.out.println("What would you like to do: \nDeposit\nWithdraw\nCheck balance\nLeave");
+        System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
         String choice = input.nextLine().strip().toLowerCase();
-        while (choice != " leave") {
-            if (choice.equals("deposit")){
-
-            }else if (choice.equals("withdraw")){
+        while (!choice.equals("leave")) {
+           if (choice.equals("withdraw")){
 
            }else if (choice.equals("check balance")){
 
-           }else if (choice.equals("leave")){
+           }else if (choice.equals("leave")) {
                System.out.println("Goodbye");
                break;
 
-           }else{
+           }else {
                System.out.println("Invalid Choice");
            }
+           System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
+           choice = input.nextLine().strip().toLowerCase();
+
         }
 
     }
