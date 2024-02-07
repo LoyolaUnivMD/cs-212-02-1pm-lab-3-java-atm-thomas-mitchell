@@ -38,7 +38,12 @@ class Lab3 {
            } else if (choice.equals("withdraw")) {
                System.out.print("How much money do you want to withdraw? ");
                int withdraw = input.nextInt();
-               while
+               while (balance < withdraw) {
+                   System.out.println("not enough money");
+                   System.out.print("How much money do you want to withdraw? ");
+                   withdraw = input.nextInt();
+               }
+               balance -= withdraw;
 
            }else if (choice.equals("check balance")){
                System.out.println("Current Balance: "+ balance);
