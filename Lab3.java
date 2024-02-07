@@ -11,6 +11,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.SortedMap;
 
 class Lab3 {
     public static void main(String[] args) {
@@ -21,11 +22,22 @@ class Lab3 {
        Scanner input = new Scanner(System.in);
        System.out.print("What is your name");
        String name = input.next();
+       System.out.println("Welcome " + name);
 
         System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
         String choice = input.nextLine().strip().toLowerCase();
         while (choice != " leave"){
+           if (choice.equals("withdraw")){
 
+           }else if (choice.equals("check balance")){
+
+           }else if (choice.equals("leave")){
+               System.out.println("Goodbye");
+               break;
+
+           }else{
+               System.out.println("Invalid Choice");
+           }
         }
 
     }
