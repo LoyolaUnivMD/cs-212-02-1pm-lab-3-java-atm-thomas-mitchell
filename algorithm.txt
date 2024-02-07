@@ -1,7 +1,7 @@
 1.When a user first accesses the ATM, the user should be asked for their name.
 2.The initial balance for the user is $212.90
 3. The ATM should greet the user by name with a greeting message, then ask the user what they would like to do.
-
+4.
 If a user selects deposit
 The ATM should increase the user's balance by the provided amount
 Otherwise, if a user selects withdraw

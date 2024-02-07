@@ -8,12 +8,12 @@
 // Credits: [Is your code based on an example in the book, in class, or something else?
 //            Reminder: you should never take code from the Internet or another person
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
 class Lab3 {
     public static void main(String[] args) {
-       System.out.println("Welcome to Lab 3");
 
        // Initialize variables
         double balance = 212.90;
@@ -22,6 +22,11 @@ class Lab3 {
        System.out.print("What is your name");
        String name = input.next();
 
+        System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
+        String choice = input.nextLine().strip().toLowerCase();
+        while (choice != " leave"){
+
+        }
 
     }
 }
