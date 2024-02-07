@@ -24,10 +24,12 @@ class Lab3 {
        String name = input.next();
        System.out.println("Welcome " + name);
 
-        System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
+        System.out.println("What would you like to do: \nDeposit\nWithdraw\nCheck balance\nLeave");
         String choice = input.nextLine().strip().toLowerCase();
-        while (choice != " leave"){
-           if (choice.equals("withdraw")){
+        while (choice != " leave") {
+            if (choice.equals("deposit")){
+
+            }else if (choice.equals("withdraw")){
 
            }else if (choice.equals("check balance")){
 
