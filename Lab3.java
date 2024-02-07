@@ -9,67 +9,126 @@
 //            Reminder: you should never take code from the Internet or another person
 
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.util.SortedMap;
 
 class Lab3 {
+    public static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         DecimalFormat moneyFMT = new DecimalFormat("$,###.##");
 
-       // Initialize variables
+        // Initialize variables
         double balance = 212.90;
-
-        Scanner input = new Scanner(System.in);
         System.out.print("What is your name");
         String name = input.next();
         System.out.println("Welcome " + name);
 
-        System.out.println("What would you like to do: \nWithdraw\nCheck balance\nLeave");
-        String choice = input.nextLine().strip().toLowerCase();
-        while (!choice.equals("leave")) {
+        int choice = intInputLimit(4, "What would you like to do: \n1.Deposit\n2.Withdraw\n3.Check balance\n4.Leave");
+        while (choice != 4) {
 
-           if (choice.equals("deposit")) {
-               System.out.print("How much money do you want to deposit? ");
-               int deposit = input.nextInt();
-               balance += deposit;
+            if (choice == 1) {
+                double deposit = doubleInput("How much money do you want to deposit? ");
+                balance += deposit;
 
-           } else if (choice.equals("withdraw")) {
-               System.out.print("How much money do you want to withdraw? ");
-               int withdraw = input.nextInt();
-               while (balance < withdraw) {
-                   System.out.println("not enough money");
-                   System.out.print("How much money do you want to withdraw? ");
-                   withdraw = input.nextInt();
-               }
-               balance -= withdraw;
+            } else if (choice == 2) {
+                double withdraw = doubleInputLimit(balance,"How much money do you want to withdraw? ");
+                balance -= withdraw;
 
-           }else if (choice.equals("check balance")){
-               System.out.println("Current Balance: "+ balance);
-           }else if (choice.equals("leave")) {
-                break;
-           } else if (choice.equals("check balance")){
-
-           } else if (choice.equals("leave")) {
-               System.out.println("Goodbye");
-               break;
-
-           }else {
-               System.out.println("Invalid Choice");
-           }
-           System.out.println("What would you like to do: \nDeposit\nWithdraw\nCheck balance\nLeave");
-           choice = input.nextLine().strip().toLowerCase();
+            } else if (choice == 3) {
+                System.out.println("Current Balance: " + moneyFMT.format(balance));
+            } else {
+                System.out.println("Invalid Choice");
+            }
+            choice = intInputLimit(4, "What would you like to do: \n1.Deposit\n2.Withdraw\n3.Check balance\n4.Leave");
 
         }
-        System.out.println("Do you want your receipt printed or emailed? (print or email)");
-        String receipt = input.nextLine().strip().toLowerCase();
+        choice = intInputLimit(2, "Do you want your receipt printed or emailed? (1.print or 2.email)");
         System.out.println("Thank you for using the ATM");
-        if (receipt.equals("print")){
+        if (choice == 1) {
             System.out.println("Do not forget to take your recipt.");
-        }else if (receipt.equals("email")){
+        }else{
             System.out.println("Check your email for your recipt");
         }
 
+    }
+
+    public static int intInputLimit(int limit, String prompt) {
+        int num = 0;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(prompt);
+            try {
+                num = input.nextInt();
+                if (num <= limit && num > 0) {
+                    valid = true;
+                } else {
+                    System.out.println("Invalid choice ");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input ");
+                input.next();
+            }
+        }
+        return num;
+    }
+    public static int intInput(String prompt) {
+        int num = 0;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(prompt);
+            try {
+                num = input.nextInt();
+                if (num > 0) {
+                    valid = true;
+                } else {
+                    System.out.println("Invalid choice ");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input ");
+                input.next();
+            }
+        }
+        return num;
+    }
+    public static double doubleInputLimit(Double limit, String prompt) {
+        double num = 0;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(prompt);
+            try {
+                num = input.nextDouble();
+                if (num > 0 && num <= limit) {
+                    valid = true;
+                } else {
+                    System.out.println("Invalid choice ");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input ");
+                input.next();
+            }
+        }
+        return num;
+    }
+    public static double doubleInput(String prompt) {
+        double num = 0;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println(prompt);
+            try {
+                num = input.nextDouble();
+                if (num > 0) {
+                    valid = true;
+                } else {
+                    System.out.println("Invalid choice ");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input ");
+                input.next();
+            }
+        }
+        return num;
     }
 }
