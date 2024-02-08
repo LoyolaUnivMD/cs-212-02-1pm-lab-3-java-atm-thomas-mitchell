@@ -19,3 +19,51 @@ The user should not be able to select invalid menu options.
 The user should not be able to enter negative numbers for deposits or withdrawls.
 The program should not crash if the user enters something that is not a number.
 
+Name: intInput
+Purpose: Makes sure the user inputs a valid int that is over 0 and is under a limit if useLimit is true
+Parameters: boolean useLimit, int limit, String prompt
+Return: valid int between 0 and limit
+1. initialize num to 0 and valid to false
+2. while not valid
+    a. print prompt
+    b. try
+        i. num = input.nextInt()
+        ii. if useLimit is true
+            a. if num <= limit and num is greater than 0
+                i. valid = true
+            b. otherwise
+                i. print "Invalid Choice"
+        iii. otherwise
+            a. if num > 0
+                i. valid = true
+            b. otherwise
+                i. print "Invalid Choice"
+    c. catch InputMismatchException e
+        i. print "Invalid input"
+        ii. input.next()
+3. return num
+
+
+Name: doubleInput
+Purpose: Makes sure the user inputs a valid double that is over 0 and is under a limit if useLimit is true
+Parameters: boolean useLimit, double limit, String prompt
+Return: valid double between 0 and limit
+1. initialize num to 0 and valid to false
+2. while not valid
+    a. print prompt
+    b. try
+        i. num = input.nextDouble()
+        ii. if useLimit is true
+            a. if num <= limit and num is greater than 0
+                i. valid = true
+            b. otherwise
+                i. print "Invalid Choice"
+        iii. otherwise
+            a. if num > 0
+                i. valid = true
+            b. otherwise
+                i. print "Invalid Choice"
+    c. catch InputMismatchException e
+        i. print "Invalid input"
+        ii. input.next()
+3. return num
