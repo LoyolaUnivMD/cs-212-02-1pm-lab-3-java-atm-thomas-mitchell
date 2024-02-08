@@ -5,7 +5,7 @@
 // Problem Statement: a program that acts at a smart ATM.
 // Data In: choices, deposit amount, withdraw amount
 // Data Out: account balance
-// Credits: input check I based off code I made in highschool
+// Credits: intInput and doubleInput are based off code I made in highschool
 
 //import decimalformat, inputMismatchException, Scanner
 import java.text.DecimalFormat;
@@ -19,12 +19,12 @@ class Lab3 {
     public static void main(String[] args) {
 
         //makes a new format for displaying money
-        DecimalFormat moneyFMT = new DecimalFormat("$,###.##");
+        DecimalFormat moneyFMT = new DecimalFormat("$ #,##0.00");
 
         // Initialize variables
         double balance = 212.90;
         //get input for name
-        System.out.print("What is your name");
+        System.out.print("What is your name: ");
         String name = input.next();
         //welcome message
         System.out.println("Welcome " + name);
