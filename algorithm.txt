@@ -1,23 +1,35 @@
-1.When a user first accesses the ATM, the user should be asked for their name.
-2.The initial balance for the user is $212.90
-3. The ATM should greet the user by name with a greeting message, then ask the user what they would like to do.
-4.
-If a user selects deposit
-The ATM should increase the user's balance by the provided amount
-Otherwise, if a user selects withdraw
-The ATM should reduce the balance by the users provided amount if and only if there are sufficients funds.
-Otherwise, if the user selects check balance
-The ATM should display the current balance
-Otherwise, if the user selects leave
-The ATM should ask if the user would like a receipt printed or emailed.
-The ATM should display the total amount deposited/withdrawn and a thank you message.
-The ATM should remind them to take the recipe or check their email depending on the option above.
-If the user has not chosen to leave:
-The ATM should return to the main menu and process starting from step 3.
-EXTRA CREDIT: Proper error checking should be included:
-The user should not be able to select invalid menu options.
-The user should not be able to enter negative numbers for deposits or withdrawls.
-The program should not crash if the user enters something that is not a number.
+1.Set the initial balance
+    double balance = 212.90;
+
+2.Prompt the user "What is your name?"
+3.Store it in the variable "name"
+4.Output a greeting message
+5.Prompt the options to choose from , "What would you like to do: \n1.Deposit\n2.Withdraw\n3.Check balance\n4.Leave") and store it in the variable "choice"
+6. while (choice != 4) {
+
+       a. if (choice == 1) {
+            a1.Prompt the user "How much money do you want to deposit? ");
+                a2.balance += deposit;
+
+        }b. else if (choice == 2) {
+            b1. Prompt the user "How much money do you want to withdraw? " and store it in "withdraw"
+                b2.balance -= withdraw;
+
+        }c. else if (choice == 3) {
+            c1.Output "Current Balance: " + moneyFMT.format(balance));
+        }d. else {
+            Output ("Invalid Choice");
+        }
+        e.Keep asking the user until he decides to exit
+
+    }
+    7. Prompt the user "Do you want your receipt printed or emailed? (1.print or 2.email)");
+    8.Output a good bye message("Thank you for using the ATM");
+    9.if (choice == 1) {
+        9.1 Output "Do not forget to take your recipt"
+    }10.else{
+        10.1 Output "Check your email for your recipt"
+    }
 
 Name: intInput
 Purpose: Makes sure the user inputs a valid int that is over 0 and is under a limit if useLimit is true

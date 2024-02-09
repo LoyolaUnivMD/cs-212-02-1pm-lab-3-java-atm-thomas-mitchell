@@ -1,0 +1,27 @@
+a)  choice = 1
+    deposit = "How much money do you want to deposit? "
+    deposit = 200
+    balance = 412.90
+
+b)  choice = 2
+    withdraw = "How much money do you want to withdraw? "
+    withdraw = 150
+    balance = 262.90
+
+c)  choice = 3
+    balance = 262.90
+    Output(262.90)
+
+d)  choice = 5
+    Output("Invalid choice")
+
+e)  choice = 4
+    choice = "Do you want your receipt printed or emailed? (1.print or 2.email)"
+    choice = 1
+    Output("Do not forget to take your receipt.")
+
+f)  choice = 4
+    choice = "Do you want your receipt printed or emailed? (1.print or 2.email)"
+    choice = 2
+    Output("Check your email for your receipt")
+
